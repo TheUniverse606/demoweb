@@ -12,7 +12,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; color: var(--ink); background: var(--cream); font-family: var(--sans); }
+body { margin: 0; color: var(--ink); background: var(--cream); font-family: var(--sans); overflow-x: hidden; }
 img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 button { color: inherit; font: inherit; }
@@ -106,9 +106,12 @@ em { color: #9aae8f; font-style: italic; }
 @media (max-width: 760px) {
   .site-header { padding: 17px 6%; }
   .main-nav { display: none; }
+  .brand { font-size: 14px; gap: 8px; }
+  .brand-mark { flex: 0 0 26px; font-size: 15px; height: 26px; width: 26px; }
   .header-cta { margin-left: auto; margin-right: 19px; }
   .hero { height: 720px; }
   .hero-content { left: 9%; right: 8%; top: 51%; }
+  h1 { font-size: clamp(48px, 14vw, 72px); }
   .hero-button { bottom: 27px; left: 9%; }
   .hero-copy { font-size: 14px; }
   .hero-note { bottom: 27px; left: 9%; right: auto; }
@@ -135,4 +138,38 @@ em { color: #9aae8f; font-style: italic; }
   .contact-action { margin-top: 30px; }
   .site-footer { align-items: start; flex-direction: column; gap: 17px; }
   .site-footer p { margin: 0; }
+}
+
+@media (max-width: 480px) {
+  .site-header { padding-left: 5%; padding-right: 5%; }
+  .brand { font-size: 12px; }
+  .header-cta { font-size: 10px; margin-right: 0; }
+  .header-cta span, .button span { margin-left: 9px; }
+  .hero { height: 650px; min-height: 0; }
+  .hero-content { left: 8%; right: 8%; }
+  h1 { font-size: clamp(43px, 14vw, 60px); }
+  h2 { font-size: clamp(36px, 12vw, 52px); }
+  .eyebrow { font-size: 9px; letter-spacing: .16em; }
+  .button { max-width: 100%; padding: 14px 15px; }
+  .stats-grid { display: block; }
+  .stat, .stat:first-child, .stat:nth-child(odd), .stat:nth-child(even) {
+    border-bottom: 1px solid #aeb5a5;
+    border-right: 0;
+    min-height: 0;
+    padding: 15px 0;
+  }
+  .stat:last-child { border-bottom: 0; }
+  .stat strong { min-width: 82px; }
+  .gallery-grid { display: block; }
+  .gallery-item, .gallery-large, .gallery-wide {
+    display: block;
+    height: 220px;
+    margin-bottom: 14px;
+    width: 100%;
+  }
+  .gallery-item:last-child { margin-bottom: 0; }
+  .location-copy { padding: 45px 9%; }
+  .map-art { min-height: 300px; }
+  .contact-layout { margin-top: 40px; }
+  .site-footer { padding-left: 9%; padding-right: 9%; }
 }
